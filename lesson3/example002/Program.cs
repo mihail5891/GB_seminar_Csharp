@@ -1,13 +1,12 @@
 ﻿// Функция ввода сообщения
-int InputInt(string message)
+int InputInt( string message )
   {
      Console.Write(message);
      string number = Console.ReadLine();
      if( number == "" )
        {
          Console.WriteLine("Вы не ввели число!");
-         InputInt( message );
-         return -1;
+         return InputInt( message );
        }
      return int.Parse( number );
   }
