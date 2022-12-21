@@ -21,6 +21,7 @@ void FillArrayRandom(int[] arr )
 // функция вывода массива в консоль 
 void PrintArray(int[] arr)
   {
+     Console.Write("массив: ");
      int count = arr.Length -1;
      Console.Write("[ ");
      for(int i = 0; i < arr.Length; i++)
@@ -48,7 +49,6 @@ int sizeArray = InputInt("Введите число: ");
 int[] number = new int[sizeArray];
 
 FillArrayRandom(number);
-Console.Write("массив: ");
 PrintArray(number);
 int[] result = OutMinMaxResult(number);
 Console.WriteLine($"Всего {sizeArray} чисел. Максимальное значение = {result[1]}, минимальное значение = {result[0]}");
