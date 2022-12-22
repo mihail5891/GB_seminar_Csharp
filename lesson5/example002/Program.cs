@@ -10,6 +10,7 @@ int InputInt( string message )
        }
      return int.Parse( number );
   }
+  // функция заполнения массива рандомными числами  
 void FillArrayRandom(int[] arr )
   {
     for( int i = 0; i < arr.Length; i++ )
@@ -17,9 +18,11 @@ void FillArrayRandom(int[] arr )
          arr[i] = new Random().Next(1,10);
       }
   }
+  // функция вывода массива в консоль 
 void PrintArray(int[] arr)
   {
      int count = arr.Length -1;
+     Console.Write("массив: ");
      Console.Write("[ ");
      for(int i = 0; i < arr.Length; i++)
       {
@@ -28,17 +31,19 @@ void PrintArray(int[] arr)
     Console.Write(" ]");
     Console.WriteLine();
 }
+int SumNonEvenNum(int[] number)
+  {
+     int sum = 0;
+     for( int i = 0; i < number.Length; i++ )
+      {
+        if(i % 2 != 0) sum += number[i];
+      } 
+     return sum;  
+  }
+
 int sizeArray = InputInt("Введите число: ");
 int[] number = new int[sizeArray];
-
 FillArrayRandom(number);
-Console.Write("массив: ");
 PrintArray(number);
-int sum = 0;
-
-for( int i = 0; i < number.Length; i++ )
-   {
-     if(i % 2 != 0) sum += number[i];
-   }
-
+int sum = SumNonEvenNum(number);
 Console.WriteLine($"всего {sizeArray} чисел, сумма элементов cтоящих на нечётных позициях = {sum}");
