@@ -31,18 +31,19 @@ void PrintArray(int[] arr)
     Console.Write(" ]");
     Console.WriteLine();
 }
-void CountEvenNum( int[] number )
+int CountEvenNum( int[] number )
   {
      int count = 0;
      for(int i = 0; i < number.Length; i++)
        {
           if (number[i] % 2 == 0) count++;
        }
-     Console.WriteLine($"Всего {sizeArray} чисел, {count} из них чётные");
+     return count;
   }
 int sizeArray = InputInt("Введите число: ");
 int[] number = new int[sizeArray];
 FillArrayRandom(number);
 PrintArray(number);
-CountEvenNum( number );
+int count = CountEvenNum( number );
+Console.WriteLine($"Всего {sizeArray} чисел, {count} из них чётные");
 
