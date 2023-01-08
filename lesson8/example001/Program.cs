@@ -44,7 +44,9 @@ void SortArray( int[,] arr )
 
 int[,] array = new int[3, 4];
 FillArray( array );
+Console.WriteLine("Созданный рандомно массив: ");
 PrintArray( array );
 SortArray( array );
 Console.WriteLine();
+Console.WriteLine("Массив с упорядоченными значениями: ");
 PrintArray( array );
